@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>时光轴</title>
+  <meta charset="UTF-8">
+  <meta name="keywords" value="时光轴">
+  <meta name="description" value="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <style>
+	*{margin:0;padding:0;}
+	body{font-size:12px;font-family:"微软雅黑";background:orange;}
+
+    .clearfix:after{content:" ";display:block;clear:both;}
+
+	.time_line{width:1000px;margin:0 auto;position:relative;background:green;}
+	.time_line .t_line{width:4px;height:1500px;background:#ccc;position:absolute;left:50px;}
+    .time_line .t_all{position:absolute;left:25px;top:50px;}
+	.time_line .t_all .list{margin-top:50px;float:left;}
+	.time_line .t_all .list .icon{float:left;}
+    .time_line .t_all .list .icon img{border-radius:25px;}
+    .time_line .t_all .list .triangle{float:left;width:12px;height:12px;background:#fff;margin-top:20px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);position:relative;left:6px;}
+    .time_line .t_all .list .msg{float:left;width:800px;background:#fff;padding:10px;border-radius:8px;font-size:16px;}
+  
+    @media screen and (max-width: 1000px) {
+		.time_line{width:720px;}
+		.time_line .t_all .list .msg{width:600px;}
+	}
+	
+    @media screen and (max-width:750px) {
+		.time_line{width:365px;}
+		.time_line .t_all .list .msg{width:250px;}
+	}
+  </style>
+
+  <link rel="stylesheet" href="css/animate.css"/>
+</head>
+<body>
+  <div class="time_line clearfix">
+	<div class="t_line"></div>
+    <div class="t_all">
+		<!--list start-->
+		<div class="list animated flipInX">
+			<div class="icon">
+				<img src="images/head1.jpg" alt="头像1" width="50" height="50"/>
+			</div>
+			<div class="triangle"></div>
+			<div class="msg">
+				生活中，我们每天都在尝试尝试中，我们走向成功品味失败，走过心灵的阴雨晴空运动员们，不要放弃尝试无论失败与否重要的是你勇于参与的精神，付出的背后是胜利无论是否成功，我们永远赞美你，你们永远是我们的骄傲。
+			</div>
+		</div>
+		<!--end list-->
+		<!--list start-->
+		<div class="list animated flipInX">
+			<div class="icon">
+				<img src="images/head2.jpg" alt="头像1" width="50" height="50"/>
+			</div>
+			<div class="triangle"></div>
+			<div class="msg">
+				　人，总是很难改正自己的缺点，人，也总是很难发现自己的错误，有时，明知错了，却欲罢不能，一错再错，把握正确的方向，坚守自己的原则，世界上的诱惑很多，天上永远不会掉馅饼，不要因为贪图一时的快乐而付出惨痛的代价，如果发现错了，一定要止步。
+			</div>
+		</div>
+		<!--end list-->
+		<!--list start-->
+		<div class="list animated flipInX">
+			<div class="icon">
+				<img src="images/head3.jpg" alt="头像1" width="50" height="50"/>
+			</div>
+			<div class="triangle"></div>
+			<div class="msg">
+				　简单生活才能幸福生活，人要自足常乐，宽容大度，什么事情都不能想繁杂，心灵的负荷重了，就会怨天忧人。要定期的对记忆进行一次删除，把不愉快的人和事从记忆中摈弃，人生苦短，财富地位都是附加的，生不带来死不带去，简简单单的生活就是快快乐乐的生活。
+			</div>
+		</div>
+		<!--end list-->
+		<!--list start-->
+		<div class="list animated flipInX">
+			<div class="icon">
+				<img src="images/head4.jpg" alt="头像1" width="50" height="50"/>
+			</div>
+			<div class="triangle"></div>
+			<div class="msg">
+				　偶尔会想，如果人生真如一场电子游戏，玩坏了可以选择重来，生活会变成什么样子?正因为时光流逝一去不复返，每一天都不可追回，所以更要珍惜每一寸光阴，孝敬父母、疼爱孩子、体贴爱人、善待朋友!
+			</div>
+		</div>
+		<!--end list-->
+	</div>
+  </div>
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script>
+		$(function(){
+			var _height=$(window).height();
+			var html=$(".t_all").html();
+			$(window).scroll(function(){
+				var scrollHeight=document.body.scrollHeight;
+				var scrollTop=document.body.scrollTop;
+				if(scrollTop+_height>=scrollHeight-5){
+					$(".t_all").append(html);
+					$(".t_line").height(document.body.scrollHeight);
+				}
+			});
+		});
+  </script>
+</body>
+</html>
